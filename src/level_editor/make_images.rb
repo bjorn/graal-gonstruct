@@ -22,7 +22,7 @@ namespace Graal {
       dst.print("      const char #{var_name}[] =")
       while data = img.read(68)
         dst.print "\n        \"#{data.gsub(/[^[:print:]]|\\|"/) { |ch|
-          "\\#{ch[0].to_s(8).rjust(3, '0')}"
+          "\\#{ch[0].ord.to_s(8).rjust(3, '0')}"
         }}\""
       end
       dst.print(";\n\n")
